@@ -3,8 +3,17 @@ import './ValidationComponent.css'
 
 const validationComponent = (props) => {
 	console.log('ValidationComponent: ' + props.textLenght);
+
+	const textLength = props.textLenght;
+
+	const validation = () => {
+		return textLength <= 5 ? "Text is too short" : "Text long enough";
+	}
+
 	return(
-		<div className='validation'><h1>Testing</h1></div>
+		<div className='content-card validation'>
+			<p>{validation()}</p>
+		</div>
 	);
 }
 
